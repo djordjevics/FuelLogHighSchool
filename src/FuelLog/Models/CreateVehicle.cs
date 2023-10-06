@@ -5,6 +5,6 @@ namespace FuelLog
         public string Model;
         public string LicensePlate;
         public string Color;
-        public int WheelNumber;
+        public int WheelCount;
     }
 }

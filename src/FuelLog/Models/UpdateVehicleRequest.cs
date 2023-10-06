@@ -1,6 +1,6 @@
 namespace FuelLog
 {
-    public class UpdateVehicle
+    public class UpdateVehicleRequest
     {
         public Vehicle UpdatedVehicle;
     }

@@ -1,6 +1,6 @@
 namespace FuelLog
 {
-    public class GetVehicle
+    public class GetVehicleById
     {
         public int Id;
     }
