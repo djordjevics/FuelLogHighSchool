@@ -1,4 +1,4 @@
-namespace FuelLog
+namespace FuelLog.Models
 {
     public class CreateFuelLog
     {
