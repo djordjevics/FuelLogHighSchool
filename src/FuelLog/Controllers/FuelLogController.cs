@@ -3,48 +3,49 @@ using Microsoft.AspNetCore.Mvc;
 namespace FuelLog.Controllers
 {
     [ApiController]
+    [Route("[controller]")]
     public class FuelLogController : Controller
     {
     
         [HttpPost]
         public IActionResult AddLog()
         {
-           throw new NotDefinedException();
+           throw new NotImplementedException();
            return Ok();
         }
         
         [HttpGet]
         public IActionResult GetAll()
         {
-            throw new NotDefinedException();
+            throw new NotImplementedException();
             return Ok();
         }
         
-        [HttpGet]
+        [HttpGet("vehicle/{vehicleId}")]
         public IActionResult GetByVehicle()
         {
-            throw new NotDefinedException();
+            throw new NotImplementedException();
             return Ok();
         }
         
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetById()
         {
-            throw new NotDefinedException();
+            throw new NotImplementedException();
             return Ok();
         }
         
         [HttpPut]
         public IActionResult UpdateLog()
         {
-            throw new NotDefinedException();
+            throw new NotImplementedException();
             return Ok();
         }
         
         [HttpDelete]
         public IActionResult DeleteLog()
         {
-            throw new NotDefinedException();
+            throw new NotImplementedException();
             return Ok();
         }
     }

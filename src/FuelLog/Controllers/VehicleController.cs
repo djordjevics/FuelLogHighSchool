@@ -2,57 +2,42 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FuelLog.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class VehicleController : Controller
     {
+        [HttpPost]
         public IActionResult AddVehicle()
         {
-            if (GetType(GetVehicle(Id)) != Vehicle)
-            {
-                return BadRequest();
-            }
-
-            AddVehicle(Vehicle);
+            throw new NotImplementedException();
             return Ok();
         }
 
+        [HttpGet]
         public IActionResult GetAll()
         {
-            if (GetAll == null)
-            {
-                return NotFound();
-            }
-            return Ok(GetAll());
-        }
-
-        public IActionResult GetVehicle()
-        {
-            if (GetVehicle == null)
-            {
-                return NotFound();
-            }
-            return Ok(GetVehicle());
-        }
-
-        public IActionResult UpdateVehicle()
-        {
-            if (GetVehicle(Id) != Vehicle)
-            {
-                return BadRequest();
-            }
-            UpdateVehicle(Vehicle);
-
+            throw new NotImplementedException();
             return Ok();
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetVehicle()
+        {
+            throw new NotImplementedException();
+            return Ok();
+        }
+
+        [HttpPut]
+        public IActionResult UpdateVehicle()
+        {
+            throw new NotImplementedException();
+            return Ok();
+        }
+
+        [HttpDelete]
         public IActionResult DeleteVehicle()
         {
-            if (GetVehicle == null)
-            {
-                return NotFound();
-            }
-
-            DeleteVehicle(Vehicle);
-
+            throw new NotImplementedException();
             return Ok();
         }
     }
