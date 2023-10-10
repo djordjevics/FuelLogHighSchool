@@ -1,3 +1,5 @@
+using FuelLog.Models.Enums;
+
 namespace FuelLog.Models
 {
     public class CreateVehicle
@@ -5,6 +7,7 @@ namespace FuelLog.Models
         public string Model;
         public string LicensePlate;
         public string Color;
+        public FuelType FuelType;
         public int WheelCount;
     }
 }
