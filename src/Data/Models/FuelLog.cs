@@ -1,11 +1,11 @@
-namespace Data
+namespace Data.Models
 {
     public class FuelLog
     {
         public int Id;
-        public int Litres;
+        public int Odometer;
+        public int AmountFilled;
         public int Cost;
-        public string TypeOfFuel;
         public int TruckId;
     }
 }

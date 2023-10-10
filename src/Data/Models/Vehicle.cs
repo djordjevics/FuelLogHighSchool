@@ -1,4 +1,4 @@
-namespace Data
+namespace Data.Models
 {
     public class Vehicle
     {
@@ -6,6 +6,7 @@ namespace Data
         public string Model;
         public string LicensePlate;
         public string Color;
+        public string FuelType;
         public int WheelCount;
     }
 }
