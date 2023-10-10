@@ -1,4 +1,6 @@
-namespace BusinessLogic
+using BuisinessLogic.Models.Enums;
+
+namespace BusinessLogic.Models
 {
     public class VehicleDTO
     {
@@ -6,13 +8,7 @@ namespace BusinessLogic
         public string LicensePlate;
         public string Model;
         public string Color;
-        public enum FuelType
-        {
-            diesel,
-            petrol,
-            cng,
-            lpg
-        }
+        public FuelType FuelType;
         public int WheelCount;
     }
 }
