@@ -2,67 +2,49 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FuelLog.Controllers
 {
+    [ApiController]
     public class FuelLogController : Controller
     {
-       public IActionResult AddLog()
-       {
-            if (GetById(Id) != FuelLog)
-            {
-                return BadRequest();
-            }
-
-            AddLog(FuelLog);
-            return Ok();
+    
+        [HttpPost]
+        public IActionResult AddLog()
+        {
+           throw new NotDefinedException();
+           return Ok();
         }
-
+        
+        [HttpGet]
         public IActionResult GetAll()
         {
-            if (GetAll == null)
-            {
-                return NotFound();
-            }
-            return Ok(GetAll());
-        }
-
-        public IActionResult GetByVehicle()
-        {
-            if (GetByVehicle == null)
-            {
-                return NotFound();
-            }
-            return Ok(GetByVehicle());
-        }
-
-        public IActionResult GetById()
-        {
-            if (GetById(Id) == null)
-            {
-                return NotFound();
-            }
-            return Ok(GetById());
-        }
-
-        public IActionResult UpdateLog()
-        {
-            if (GetType(GetById(Id)) != FuelLog)
-            {
-                return BadRequest();
-            }
-
-            UpdateLog(FuelLog);
-
+            throw new NotDefinedException();
             return Ok();
         }
-
+        
+        [HttpGet]
+        public IActionResult GetByVehicle()
+        {
+            throw new NotDefinedException();
+            return Ok();
+        }
+        
+        [HttpGet]
+        public IActionResult GetById()
+        {
+            throw new NotDefinedException();
+            return Ok();
+        }
+        
+        [HttpPut]
+        public IActionResult UpdateLog()
+        {
+            throw new NotDefinedException();
+            return Ok();
+        }
+        
+        [HttpDelete]
         public IActionResult DeleteLog()
         {
-            if (GetById(Id) == null)
-            {
-                return NotFound();
-            }
-
-            DeleteLog(id);
-
+            throw new NotDefinedException();
             return Ok();
         }
     }
