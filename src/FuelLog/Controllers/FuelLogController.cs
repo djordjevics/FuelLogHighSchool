@@ -4,72 +4,68 @@ namespace FuelLog.Controllers
 {
     public class FuelLogController : Controller
     {
-        public IActionResult Index()
+       public IActionResult AddLog()
+       {
+            if (GetById(Id) != FuelLog)
+            {
+                return BadRequest();
+            }
+
+            AddLog(FuelLog);
+            return Ok();
+        }
+
+        public IActionResult GetAll()
         {
-            public IActionResult AddLog()
+            if (GetAll == null)
             {
-                if (GetById(Id) != FuelLog)
-                {
-                    return BadRequest();
-                }
+                return NotFound();
+            }
+            return Ok(GetAll());
+        }
 
-                AddLog(FuelLog);
+        public IActionResult GetByVehicle()
+        {
+            if (GetByVehicle == null)
+            {
+                return NotFound();
+            }
+            return Ok(GetByVehicle());
+        }
 
-                return Ok();
+        public IActionResult GetById()
+        {
+            if (GetById(Id) == null)
+            {
+                return NotFound();
+            }
+            return Ok(GetById());
+        }
+
+        public IActionResult UpdateLog()
+        {
+            if (GetType(GetById(Id)) != FuelLog)
+            {
+                return BadRequest();
             }
 
-            public IActionResult GetAll()
+            UpdateLog(FuelLog);
+
+            return Ok();
+        }
+
+        public IActionResult DeleteLog()
+        {
+            if (GetById(Id) == null)
             {
-                if (GetAll == null)
-                {
-                    return NotFound();
-                }
-                return Ok(GetAll());
+                return NotFound();
             }
 
-            public IActionResult GetByVehicle()
-            {
-                if (GetByVehicle == null)
-                {
-                    return NotFound();
-                }
-                return Ok(GetByVehicle());
-            }
+            DeleteLog(id);
 
-            public IActionResult GetById()
-            {
-                if (GetById(Id) == null)
-                {
-                    return NotFound();
-                }
-                return Ok(GetById());
-            }
-
-            public IActionResult UpdateLog()
-            {
-                if (GetType(GetById(Id)) != FuelLog)
-                {
-                    return BadRequest();
-                }
-
-                UpdateLog(FuelLog);
-
-                return Ok();
-            }
-
-            public IActionResult DeleteLog()
-            {
-                if (GetById(Id) == null)
-                {
-                    return NotFound();
-                }
-
-                DeleteLog(id);
-
-                return Ok();
-            }
+            return Ok();
+        }
 
             return View();
-        }
     }
 }
