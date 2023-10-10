@@ -65,7 +65,5 @@ namespace FuelLog.Controllers
 
             return Ok();
         }
-
-            return View();
     }
 }
