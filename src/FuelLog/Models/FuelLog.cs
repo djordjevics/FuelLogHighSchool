@@ -1,11 +1,16 @@
-namespace FuelLog
+using FuelLog.Models.Enums;
+
+namespace FuelLog.Models
 {
     public class FuelLog
     {
         public int Id;
-        public int Litres;
+        public int Odometer;
+        public OdometerUnit OdometerUnit;
+        public int AmountFilled;
+        public AmountFilledUnit AmountFilledUnit;
         public int Cost;
-        public string TypeOfFuel;
-        public Vehicle Truck;
+        public CostCurrency CostCurrency;
+        public int VehicleId;
     }
 }
