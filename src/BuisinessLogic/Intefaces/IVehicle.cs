@@ -2,13 +2,10 @@
 {
     public interface IVehicle
     {
-        public interface IVehicle
-        {
-            IEnumerable<VehicleDTO> GetAllVehicles();
-            VehicleDTO GetVehicleById(int id);
-            void AddVehicle(Vehicle vehicle);
-            void Updatevehicle(int id, Vehicle vehicle);
-            void Deletevehicle(int id);
-        }
+        IEnumerable<VehicleDTO> GetAllVehicles();
+        VehicleDTO GetVehicleById(int id);
+        void AddVehicle(VehicleDTO vehicle);
+        void Updatevehicle(Vehicle vehicle);
+        void Deletevehicle(int id);
     }
 }
