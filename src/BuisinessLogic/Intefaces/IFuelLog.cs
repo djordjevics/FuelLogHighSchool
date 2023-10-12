@@ -1,4 +1,6 @@
-﻿namespace BuisinessLogic.Intefaces
+﻿using BusinessLogic.Models;
+
+namespace BuisinessLogic.Intefaces
 {
     public interface IFuelLog
     {
@@ -6,7 +8,7 @@
         IEnumerable<FuelLogDTO> GetAllFuelLogsByVehicleId(int id);
         FuelLogDTO GetFuelLogById(int id);
         void AddFuelLogToVehicle(FuelLogDTO fuelLog);
-        void UpdateFuelLog(UpdateFuelLogRequest fuelLog);
+        void UpdateFuelLog(FuelLogDTO fuelLog);
         void DeleteFuelLog(int id);
     }
 }
