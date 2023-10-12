@@ -1,8 +1,8 @@
-using FuelLog.Models.Enums;
+using BuisinessLogic.Models.Enums;
 
-namespace FuelLog.Models
+namespace BusinessLogic.Models
 {
-    public class Vehicle
+    public class VehicleDTO
     {
         public int Id;
         public string LicensePlate;

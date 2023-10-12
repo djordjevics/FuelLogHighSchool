@@ -1,8 +1,8 @@
-using FuelLog.Models.Enums;
+using BuisinessLogic.Models.Enums;
 
-namespace FuelLog.Models
+namespace BusinessLogic.Models
 {
-    public class FuelLog
+    public class FuelLogDTO
     {
         public int Id;
         public int Odometer;
