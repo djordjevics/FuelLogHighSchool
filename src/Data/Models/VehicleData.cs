@@ -1,6 +1,6 @@
 namespace Data.Models
 {
-    public class Vehicle
+    public class VehicleData
     {
         public int Id;
         public string Model;

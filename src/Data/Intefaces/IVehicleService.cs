@@ -4,10 +4,10 @@ namespace Data.Intefaces
 {
     public interface IVehicleService
     {
-        IEnumerable<Vehicle> GetAllVehicles();
-        Vehicle GetVehicleById(int id);
-        void AddVehicle(Vehicle vehicle);
-        void Updatevehicle(Vehicle vehicle);
-        void Deletevehicle(int id);
+        IEnumerable<VehicleData> GetAllVehicles();
+        VehicleData GetVehicleById(int id);
+        void AddVehicle(VehicleData vehicle);
+        void UpdateVehicle(VehicleData vehicle);
+        void DeleteVehicle(int id);
     }
 }

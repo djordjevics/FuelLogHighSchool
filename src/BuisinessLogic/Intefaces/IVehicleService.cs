@@ -1,13 +1,14 @@
 ﻿using BusinessLogic.Models;
+using FuelLogAPI.Models;
 
 namespace BuisinessLogic.Intefaces
 {
     public interface IVehicleService
     {
-        IEnumerable<VehicleDTO> GetAllVehicles();
-        VehicleDTO GetVehicleById(int id);
-        void AddVehicle(VehicleDTO vehicle);
-        void Updatevehicle(VehicleDTO vehicle);
-        void Deletevehicle(int id);
+        IEnumerable<Vehicle> GetAllVehicles();
+        Vehicle GetVehicleById(GetVehicleById getVehicleById);
+        void AddVehicle(CreateVehicle createVehicle);
+        void UpdateVehicle(UpdateVehicleRequest updateVehicleRequest);
+        void DeleteVehicle(DeleteVehicleRequest deleteVehicleRequest);
     }
 }

@@ -1,6 +1,6 @@
 namespace Data.Models
 {
-    public class FuelLog
+    public class FuelLogData
     {
         public int Id;
         public int Odometer;

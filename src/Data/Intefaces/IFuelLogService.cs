@@ -4,11 +4,11 @@ namespace Data.Intefaces
 {
     public interface IFuelLogService
     {
-        IEnumerable<FuelLog> GetAllFuelLogs();
-        IEnumerable<FuelLog> GetAllFuelLogsByVehicleId(int id);
-        FuelLog GetFuelLogById(int id);
-        void AddFuelLogToVehicle(FuelLog fuelLog);
-        void UpdateFuelLog(FuelLog fuelLog);
+        IEnumerable<FuelLogData> GetAllFuelLogs();
+        IEnumerable<FuelLogData> GetAllFuelLogsByVehicleId(int id);
+        FuelLogData GetFuelLogById(int id);
+        void AddFuelLogToVehicle(FuelLogData fuelLog);
+        void UpdateFuelLog(FuelLogData fuelLog);
         void DeleteFuelLog(int id);
     }
 }

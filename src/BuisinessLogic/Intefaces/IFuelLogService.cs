@@ -1,15 +1,15 @@
 ﻿using BusinessLogic.Models;
-using FuelLog;
+using FuelLogAPI.Models;
 
 namespace BuisinessLogic.Intefaces
 {
     public interface IFuelLogService
     {
         IEnumerable<FuelLog> GetAllFuelLogs();
-        IEnumerable<FuelLog> GetAllFuelLogsByVehicleId(int id);
-        FuelLog GetFuelLogById(int id);
-        void AddFuelLogToVehicle(CreateFuelLog fuelLog);
-        void UpdateFuelLog(UpdateFuelLogRequest fuelLog);
-        void DeleteFuelLog(int id);
+        IEnumerable<FuelLog> GetAllFuelLogsByVehicleId(GetFuelLogsByVehicleId getFuelLogsByVehicleId);
+        FuelLog GetFuelLogById(GetFuelLogById getFuelLogById);
+        void AddFuelLogToVehicle(CreateFuelLog createFuelLog);
+        void UpdateFuelLog(UpdateFuelLogRequest updateFuelLogRequest);
+        void DeleteFuelLog(DeleteFuelLogRequest deleteFuelLogRequest);
     }
 }
