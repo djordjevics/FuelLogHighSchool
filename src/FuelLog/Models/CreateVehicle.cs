@@ -1,6 +1,6 @@
-using FuelLog.Models.Enums;
+using FuelLogAPI.Models.Enums;
 
-namespace FuelLog.Models
+namespace FuelLogAPI.Models
 {
     public class CreateVehicle
     {

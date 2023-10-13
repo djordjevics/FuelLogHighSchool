@@ -1,4 +1,4 @@
-﻿namespace FuelLog.Models.Enums
+﻿namespace FuelLogAPI.Models.Enums
 {
     public enum CostCurrency
     {
