@@ -2,7 +2,7 @@
 
 namespace Data.Intefaces
 {
-    public interface IFuelLog
+    public interface IFuelLogService
     {
         IEnumerable<FuelLog> GetAllFuelLogs();
         IEnumerable<FuelLog> GetAllFuelLogsByVehicleId(int id);

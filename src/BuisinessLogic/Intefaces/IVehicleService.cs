@@ -2,7 +2,7 @@
 
 namespace BuisinessLogic.Intefaces
 {
-    public interface IVehicle
+    public interface IVehicleService
     {
         IEnumerable<VehicleDTO> GetAllVehicles();
         VehicleDTO GetVehicleById(int id);

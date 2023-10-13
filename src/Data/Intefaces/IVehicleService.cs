@@ -2,7 +2,7 @@
 
 namespace Data.Intefaces
 {
-    public interface IVehicle
+    public interface IVehicleService
     {
         IEnumerable<Vehicle> GetAllVehicles();
         Vehicle GetVehicleById(int id);
