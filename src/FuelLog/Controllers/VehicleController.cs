@@ -6,6 +6,8 @@ namespace FuelLogAPI.Controllers
     [Route("[controller]")]
     public class VehicleController : Controller
     {
+        private IVehicleService _vehicleService = 
+
         [HttpPost]
         public IActionResult AddVehicle()
         {
