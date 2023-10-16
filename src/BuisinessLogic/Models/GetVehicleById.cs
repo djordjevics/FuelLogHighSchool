@@ -1,4 +1,4 @@
-namespace FuelLogAPI.Models
+namespace BuisinessLogic.Models
 {
     public class GetVehicleById
     {

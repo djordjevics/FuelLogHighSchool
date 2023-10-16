@@ -1,5 +1,4 @@
-﻿using BusinessLogic.Models;
-using FuelLogAPI.Models;
+﻿using BuisinessLogic.Models;
 
 namespace BuisinessLogic.Intefaces
 {
