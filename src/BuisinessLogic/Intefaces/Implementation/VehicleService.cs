@@ -1,6 +1,6 @@
 ﻿using BuisinessLogic.Models;
 
-namespace BuisinessLogic.Intefaces
+namespace BuisinessLogic.Intefaces.Implementation
 {
     public class VehicleService : IVehicleService
     {

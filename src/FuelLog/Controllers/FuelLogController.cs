@@ -1,6 +1,6 @@
 using BuisinessLogic.Intefaces;
+using BuisinessLogic.Intefaces.Implementation;
 using BuisinessLogic.Models;
-using BuisinessLogic.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuisinessLogic.Controllers

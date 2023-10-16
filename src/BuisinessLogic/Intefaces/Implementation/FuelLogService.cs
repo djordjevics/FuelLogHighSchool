@@ -1,12 +1,16 @@
 ﻿using BuisinessLogic.Models;
+using Data.Intefaces;
+using Data.Intefaces.Implementation;
 
-namespace BuisinessLogic.Intefaces
+namespace BuisinessLogic.Intefaces.Implementation
 {
     public class FuelLogService : IFuelLogService
     {
+        private IFuelLogService _fuelLogService = new FuelLogService();
+
         public void AddFuelLogToVehicle(CreateFuelLog createFuelLog)
         {
-            throw new NotImplementedException();
+
         }
 
         public void DeleteFuelLog(DeleteFuelLogRequest deleteFuelLogRequest)
