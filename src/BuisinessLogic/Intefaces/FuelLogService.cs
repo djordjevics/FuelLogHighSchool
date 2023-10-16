@@ -1,8 +1,8 @@
-﻿using FuelLogAPI.Models;
+﻿using BuisinessLogic.Models;
 
 namespace BuisinessLogic.Intefaces
 {
-    internal class FuelLogService : IFuelLogService
+    public class FuelLogService : IFuelLogService
     {
         public void AddFuelLogToVehicle(CreateFuelLog createFuelLog)
         {

@@ -1,5 +1,6 @@
 using BuisinessLogic.Intefaces;
-using FuelLogAPI.Models;
+using BuisinessLogic.Models;
+using BuisinessLogic.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuisinessLogic.Controllers
@@ -11,9 +12,9 @@ namespace BuisinessLogic.Controllers
         private IFuelLogService _fuelLogService = new FuelLogService();
 
         [HttpPost]
-        public IActionResult AddLog()
+        public IActionResult AddLog(CreateFuelLog createFuelLog)
         {
-            _fuelLogService.AddFuelLogToVehicle(CreateFuelLog createFuelLog);
+            _fuelLogService.AddFuelLogToVehicle(createFuelLog);
             return Ok();
         }
         
@@ -25,28 +26,37 @@ namespace BuisinessLogic.Controllers
         }
         
         [HttpGet("vehicle/{vehicleId}")]
-        public IActionResult GetByVehicle()
+        public IActionResult GetByVehicle(int vehicleId)
         {
-            return _fuelLogService.GetAllFuelLogsByVehicleId(GetFuelLogsByVehicleId getFuelLogsByVehicleId);
+            return Ok(_fuelLogService.GetAllFuelLogsByVehicleId(new()
+            { 
+                VehicleId = vehicleId 
+            }));
         }
         
         [HttpGet("{id}")]
-        public IActionResult GetById()
+        public IActionResult GetById(int fuelLogId)
         {
-            return _fuelLogService.GetFuelLogById(GetFuelLogById getFuelLogById);
+            return Ok(_fuelLogService.GetFuelLogById(new()
+            {
+                Id = fuelLogId
+            }));
         }
         
         [HttpPut]
-        public IActionResult UpdateLog()
+        public IActionResult UpdateLog(UpdateFuelLogRequest updateFuelLogRequest)
         {
-            _fuelLogService.UpdateFuelLog(UpdateFuelLogRequest updateFuelLogRequest);
+            _fuelLogService.UpdateFuelLog(updateFuelLogRequest);
             return Ok();
         }
         
         [HttpDelete]
-        public IActionResult DeleteLog()
+        public IActionResult DeleteLog(int fuelLogId)
         {
-            _fuelLogService.DeleteFuelLog(DeleteFuelLogRequest deleteFuelLogRequest);
+            _fuelLogService.DeleteFuelLog(new()
+            {
+                Id = fuelLogId
+            });
             return Ok();
         }
     }

@@ -1,5 +1,5 @@
 using BuisinessLogic.Intefaces;
-using FuelLogAPI.Models;
+using BuisinessLogic.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuisinessLogic.Controllers
@@ -11,35 +11,41 @@ namespace BuisinessLogic.Controllers
         private IVehicleService _vehicleService = new VehicleService();
 
         [HttpPost]
-        public IActionResult AddVehicle()
+        public IActionResult AddVehicle(CreateVehicle createVehicle)
         {
-            _vehicleService.AddVehicle(CreateVehicle createVehicle);
+            _vehicleService.AddVehicle(createVehicle);
             return Ok();
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            return _vehicleService.GetAllVehicles();
+            return Ok(_vehicleService.GetAllVehicles());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetVehicle()
+        public IActionResult GetVehicle(int vehicleId)
         {
-            return _vehicleService.GetVehicleById(GetVehicleById getVehicleById);
+            return Ok(_vehicleService.GetVehicleById(new ()
+            {
+                Id = vehicleId
+            }));
         }
 
         [HttpPut]
-        public IActionResult UpdateVehicle()
+        public IActionResult UpdateVehicle(UpdateVehicleRequest updateVehicleRequest)
         {
-            _vehicleService.UpdateVehicle(UpdateVehicleRequest updateVehicleRequest);
+            _vehicleService.UpdateVehicle(updateVehicleRequest);
             return Ok();
         }
 
         [HttpDelete]
-        public IActionResult DeleteVehicle()
+        public IActionResult DeleteVehicle(int vehicleId)
         {
-            _vehicleService.DeleteVehicle(DeleteVehicleRequest deleteVehicleRequest);
+            _vehicleService.DeleteVehicle(new()
+            {
+                Id = vehicleId
+            });
             return Ok();
         }
     }
