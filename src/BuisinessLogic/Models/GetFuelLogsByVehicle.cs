@@ -1,6 +1,6 @@
-using FuelLogAPI.Models.Enums;
+using BuisinessLogic.Models.Enums;
 
-namespace FuelLogAPI.Models
+namespace BuisinessLogic.Models
 {
     public class GetFuelLogsByVehicleId
     {
