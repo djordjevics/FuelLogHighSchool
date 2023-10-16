@@ -2,7 +2,7 @@
 
 namespace Data.Intefaces.Implementation
 {
-    public class FuelLogService : IFuelLogService
+    public class FuelLogService : IFuelLogServiceData
     {
         public void AddFuelLogToVehicle(FuelLogData fuelLog)
         {

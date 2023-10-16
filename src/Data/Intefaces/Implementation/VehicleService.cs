@@ -2,7 +2,7 @@
 
 namespace Data.Intefaces.Implementation
 {
-    public class VehicleService : IVehicleService
+    public class VehicleService : IVehicleServiceData
     {
         public void AddVehicle(VehicleData vehicle)
         {
