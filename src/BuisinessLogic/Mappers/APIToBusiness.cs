@@ -1,60 +1,59 @@
 ﻿using BusinessLogic.Models.Enums;
 using BusinessLogic.Models;
-using FuelLogAPI.Models;
 
 namespace BusinessLogic.Mappers
 {
-    public class APIToBusiness
+    public static class APIToBusiness
     {
-        public VehicleDTO toVehicleDTO(CreateVehicle createVehicle)
+        public static VehicleDTO toVehicleDTO(this CreateVehicle create)
         {
             return new VehicleDTO
             {
-                Color = createVehicle.Color,
-                Model = createVehicle.Model,
-                LicensePlate = createVehicle.LicensePlate,
-                WheelCount = createVehicle.WheelCount,
-                FuelType = (FuelType)createVehicle.FuelType
+                Color = create.Color,
+                Model = create.Model,
+                LicensePlate = create.LicensePlate,
+                WheelCount = create.WheelCount,
+                FuelType = create.FuelType
             };
         }
 
-        public VehicleDTO toVehicleDTO(UpdateVehicleRequest updateVehicleRequest)
+        public static VehicleDTO toVehicleDTO(this UpdateVehicleRequest req)
         {
             return new VehicleDTO
             {
-                Color = updateVehicleRequest.UpdatedVehicle.Color,
-                Model = updateVehicleRequest.UpdatedVehicle.Model,
-                LicensePlate = updateVehicleRequest.UpdatedVehicle.LicensePlate,
-                WheelCount = updateVehicleRequest.UpdatedVehicle.WheelCount,
-                FuelType = (FuelType)updateVehicleRequest.UpdatedVehicle.FuelType
+                Color = req.UpdatedVehicle.Color,
+                Model = req.UpdatedVehicle.Model,
+                LicensePlate = req.UpdatedVehicle.LicensePlate,
+                WheelCount = req.UpdatedVehicle.WheelCount,
+                FuelType = req.UpdatedVehicle.FuelType
             };
         }
 
-        public FuelLogDTO toFuelLogDTO(CreateFuelLog createFuelLog)
+        public static FuelLogDTO toFuelLogDTO(this CreateFuelLog create)
         {
             return new FuelLogDTO
             {
-                Odometer = createFuelLog.Odometer,
-                OdometerUnit = (OdometerUnit)createFuelLog.OdometerUnit,
-                AmountFilled = createFuelLog.AmountFilled,
-                AmountFilledUnit = (AmountFilledUnit)createFuelLog.AmountFilledUnit,
-                Cost = createFuelLog.Cost,
-                CostCurrency = (CostCurrency)createFuelLog.CostCurrency,
-                VehicleId = createFuelLog.VehicleId
+                Odometer = create.Odometer,
+                OdometerUnit = create.OdometerUnit,
+                AmountFilled = create.AmountFilled,
+                AmountFilledUnit = create.AmountFilledUnit,
+                Cost = create.Cost,
+                CostCurrency = create.CostCurrency,
+                VehicleId = create.VehicleId
             };
         }
 
-        public FuelLogDTO toFuelLogDTO(UpdateFuelLogRequest updateFuelLogRequest)
+        public static FuelLogDTO toFuelLogDTO(this UpdateFuelLogRequest req)
         {
             return new FuelLogDTO
             {
-                Odometer = updateFuelLogRequest.UpdatedFuelLog.Odometer,
-                OdometerUnit = (OdometerUnit)updateFuelLogRequest.UpdatedFuelLog.OdometerUnit,
-                AmountFilled = updateFuelLogRequest.UpdatedFuelLog.AmountFilled,
-                AmountFilledUnit = (AmountFilledUnit)updateFuelLogRequest.UpdatedFuelLog.AmountFilledUnit,
-                Cost = updateFuelLogRequest.UpdatedFuelLog.Cost,
-                CostCurrency = (CostCurrency)updateFuelLogRequest.UpdatedFuelLog.CostCurrency,
-                VehicleId = updateFuelLogRequest.UpdatedFuelLog.VehicleId
+                Odometer = req.UpdatedFuelLog.Odometer,
+                OdometerUnit = req.UpdatedFuelLog.OdometerUnit,
+                AmountFilled = req.UpdatedFuelLog.AmountFilled,
+                AmountFilledUnit = req.UpdatedFuelLog.AmountFilledUnit,
+                Cost = req.UpdatedFuelLog.Cost,
+                CostCurrency = req.UpdatedFuelLog.CostCurrency,
+                VehicleId = req.UpdatedFuelLog.VehicleId
             };
         }
     }

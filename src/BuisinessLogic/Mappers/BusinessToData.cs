@@ -4,19 +4,30 @@ using Data.Models;
 
 namespace BusinessLogic.Mappers
 {
-    public class BusinessToData
+    public static class BusinessToData
     {
-        private Converter converter = new Converter();
 
-        public FuelLogData toFuellogData(FuelLogDTO fuelLogDTO)
+        public static FuelLogData toFuellogData(this FuelLogDTO dto)
         {
             return new FuelLogData
             {
-                Id = fuelLogDTO.Id,
-                Odometer = fuelLogDTO.OdometerUnit == OdometerUnit.MI ? converter.MiToKm(fuelLogDTO.Odometer) : fuelLogDTO.Odometer,
-                AmountFilled = fuelLogDTO.AmountFilledUnit == AmountFilledUnit.IMPGALLONS ? converter.ImpGallonsToLiters(fuelLogDTO.AmountFilled) : fuelLogDTO.AmountFilledUnit == AmountFilledUnit.USGALLONS ? converter.UsGallonsToLiters(fuelLogDTO.AmountFilled) : fuelLogDTO.AmountFilled,
-                Cost = fuelLogDTO.CostCurrency == CostCurrency.EUR ? converter.EurToRsd(fuelLogDTO.Cost) : fuelLogDTO.Cost,
-                VehicleId = fuelLogDTO.VehicleId
+                Id = dto.Id,
+                Odometer = dto.OdometerUnit == OdometerUnit.MI ? dto.Odometer.MiToKm() : dto.Odometer,
+                AmountFilled = dto.AmountFilledUnit == AmountFilledUnit.IMPGALLONS ? dto.AmountFilled.ImpGallonsToLiters() : dto.AmountFilledUnit == AmountFilledUnit.USGALLONS ? dto.AmountFilled.UsGallonsToLiters() : dto.AmountFilled,
+                Cost = dto.CostCurrency == CostCurrency.EUR ? dto.Cost.EurToRsd() : dto.Cost,
+                VehicleId = dto.VehicleId
+            };
+        }
+
+        public static VehicleData toVehicleData(this VehicleDTO dto)
+        {
+            return new VehicleData
+            {
+                Id = dto.Id,
+                Model = dto.Model,
+                LicensePlate = dto.LicensePlate,
+                Color = dto.Color,
+                FuelType = dto.FuelType.ToString()
             };
         }
     }

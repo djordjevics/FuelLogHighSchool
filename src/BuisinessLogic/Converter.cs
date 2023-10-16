@@ -1,36 +1,36 @@
 ﻿namespace BusinessLogic
 {
-    public class Converter
+    public static class Converter
     {
-        public double KmToMi(double Km)
+        public static double KmToMi(this double Km)
         {
             return Km / 1.609;
         }
-        public double MiToKm(double Mi)
+        public static double MiToKm(this double Mi)
         {
             return Mi * 1.609;
         }
-        public double EurToRsd(double Eur)
+        public static double EurToRsd(this double Eur)
         {
             return Eur * 117.18;
         }
-        public double RsdToEur(double Rsd)
+        public static double RsdToEur(this double Rsd)
         {
             return Rsd / 117.18;
         }
-        public double LitersToUsGallons(double Liters)
+        public static double LitersToUsGallons(this double Liters)
         {
             return Liters * 0.264;
         }
-        public double LitersToImpGallons(double Liters)
+        public static double LitersToImpGallons(this double Liters)
         {
             return Liters / 4.546;
         }
-        public double UsGallonsToLiters(double Gallons)
+        public static double UsGallonsToLiters(this double Gallons)
         {
             return Gallons / 0.264;
         }
-        public double ImpGallonsToLiters(double Gallons)
+        public static double ImpGallonsToLiters(this double Gallons)
         {
             return Gallons * 4.546;
         }

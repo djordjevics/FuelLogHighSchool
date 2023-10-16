@@ -1,36 +1,35 @@
 ﻿using BusinessLogic.Models;
-using FuelLogAPI.Models;
-using FuelLogAPI.Models.Enums;
+using BusinessLogic.Models.Enums;
 
 namespace BusinessLogic.Mappers
 {
-    public class BusinessToAPI
+    public static class BusinessToAPI
     {
-        public Vehicle toVehicle(VehicleDTO vehicleDTO)
+        public static Vehicle toVehicle(this VehicleDTO dto)
         {
             return new Vehicle
             {
-                Id = vehicleDTO.Id,
-                Model = vehicleDTO.Model,
-                Color = vehicleDTO.Color,
-                LicensePlate = vehicleDTO.LicensePlate,
-                FuelType = (FuelType)vehicleDTO.FuelType,
-                WheelCount = vehicleDTO.WheelCount
+                Id = dto.Id,
+                Model = dto.Model,
+                Color = dto.Color,
+                LicensePlate = dto.LicensePlate,
+                FuelType = dto.FuelType,
+                WheelCount = dto.WheelCount
             };
         }
 
-        public FuelLog toFuelLog(FuelLogDTO fuelLogDTO)
+        public static FuelLog toFuelLog(this FuelLogDTO dto)
         {
             return new FuelLog
             {
-                Id = fuelLogDTO.Id,
-                AmountFilled = fuelLogDTO.AmountFilled,
-                AmountFilledUnit = (AmountFilledUnit)fuelLogDTO.AmountFilledUnit,
-                Odometer = fuelLogDTO.Odometer,
-                OdometerUnit = (OdometerUnit)fuelLogDTO.OdometerUnit,
-                Cost = fuelLogDTO.Cost,
-                CostCurrency = (CostCurrency)fuelLogDTO.CostCurrency,
-                VehicleId = fuelLogDTO.VehicleId
+                Id = dto.Id,
+                AmountFilled = dto.AmountFilled,
+                AmountFilledUnit = dto.AmountFilledUnit,
+                Odometer = dto.Odometer,
+                OdometerUnit = dto.OdometerUnit,
+                Cost = dto.Cost,
+                CostCurrency = dto.CostCurrency,
+                VehicleId = dto.VehicleId
             };
         }
     }
