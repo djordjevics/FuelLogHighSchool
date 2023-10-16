@@ -1,11 +1,10 @@
 ﻿using BusinessLogic.Models;
-using BusinessLogic.Models.Enums;
 
 namespace BusinessLogic.Mappers
 {
     public static class BusinessToAPI
     {
-        public static Vehicle toVehicle(this VehicleDTO dto)
+        public static Vehicle ToVehicle(this VehicleDTO dto)
         {
             return new Vehicle
             {
@@ -18,7 +17,7 @@ namespace BusinessLogic.Mappers
             };
         }
 
-        public static FuelLog toFuelLog(this FuelLogDTO dto)
+        public static FuelLog ToFuelLog(this FuelLogDTO dto)
         {
             return new FuelLog
             {

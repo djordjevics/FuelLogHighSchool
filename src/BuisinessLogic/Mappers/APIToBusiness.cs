@@ -5,19 +5,19 @@ namespace BusinessLogic.Mappers
 {
     public static class APIToBusiness
     {
-        public static VehicleDTO toVehicleDTO(this CreateVehicle create)
+        public static VehicleDTO ToVehicleDTO(this CreateVehicle req)
         {
             return new VehicleDTO
             {
-                Color = create.Color,
-                Model = create.Model,
-                LicensePlate = create.LicensePlate,
-                WheelCount = create.WheelCount,
-                FuelType = create.FuelType
+                Color = req.Color,
+                Model = req.Model,
+                LicensePlate = req.LicensePlate,
+                WheelCount = req.WheelCount,
+                FuelType = req.FuelType
             };
         }
 
-        public static VehicleDTO toVehicleDTO(this UpdateVehicleRequest req)
+        public static VehicleDTO ToVehicleDTO(this UpdateVehicleRequest req)
         {
             return new VehicleDTO
             {
@@ -29,17 +29,17 @@ namespace BusinessLogic.Mappers
             };
         }
 
-        public static FuelLogDTO toFuelLogDTO(this CreateFuelLog create)
+        public static FuelLogDTO ToFuelLogDTO(this CreateFuelLog req)
         {
             return new FuelLogDTO
             {
-                Odometer = create.Odometer,
-                OdometerUnit = create.OdometerUnit,
-                AmountFilled = create.AmountFilled,
-                AmountFilledUnit = create.AmountFilledUnit,
-                Cost = create.Cost,
-                CostCurrency = create.CostCurrency,
-                VehicleId = create.VehicleId
+                Odometer = req.Odometer,
+                OdometerUnit = req.OdometerUnit,
+                AmountFilled = req.AmountFilled,
+                AmountFilledUnit = req.AmountFilledUnit,
+                Cost = req.Cost,
+                CostCurrency = req.CostCurrency,
+                VehicleId = req.VehicleId
             };
         }
 

@@ -7,7 +7,7 @@ namespace BusinessLogic.Mappers
     public static class BusinessToData
     {
 
-        public static FuelLogData toFuellogData(this FuelLogDTO dto)
+        public static FuelLogData ToFuellogData(this FuelLogDTO dto)
         {
             return new FuelLogData
             {
@@ -19,7 +19,7 @@ namespace BusinessLogic.Mappers
             };
         }
 
-        public static VehicleData toVehicleData(this VehicleDTO dto)
+        public static VehicleData ToVehicleData(this VehicleDTO dto)
         {
             return new VehicleData
             {

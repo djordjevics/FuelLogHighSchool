@@ -6,7 +6,7 @@ namespace BusinessLogic.Mappers
 {
     public static class DataToBusiness
     {
-        public static FuelLogDTO toFuelLogDTO(this FuelLogData data)
+        public static FuelLogDTO ToFuelLogDTO(this FuelLogData data)
         {
             return new FuelLogDTO
             {
@@ -18,7 +18,7 @@ namespace BusinessLogic.Mappers
             };
         }
 
-        public static VehicleDTO toVehicleDTO(this VehicleData data)
+        public static VehicleDTO ToVehicleDTO(this VehicleData data)
         {
             return new VehicleDTO
             {
@@ -27,7 +27,7 @@ namespace BusinessLogic.Mappers
                 Color = data.Color,
                 LicensePlate = data.LicensePlate,
                 WheelCount = data.WheelCount,
-                FuelType = (FuelType)Enum.Parse(typeof(FuelType), data.FuelType)
+                FuelType = Enum.Parse<FuelType>(data.FuelType)
             };
         }
     }
