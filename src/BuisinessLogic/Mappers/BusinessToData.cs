@@ -1,8 +1,8 @@
-﻿using BuisinessLogic.Models.Enums;
+﻿using BusinessLogic.Models.Enums;
 using BusinessLogic.Models;
 using Data.Models;
 
-namespace BuisinessLogic.Mappers
+namespace BusinessLogic.Mappers
 {
     public class BusinessToData
     {

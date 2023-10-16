@@ -2,7 +2,7 @@
 using FuelLogAPI.Models;
 using FuelLogAPI.Models.Enums;
 
-namespace BuisinessLogic.Mappers
+namespace BusinessLogic.Mappers
 {
     public class BusinessToAPI
     {
