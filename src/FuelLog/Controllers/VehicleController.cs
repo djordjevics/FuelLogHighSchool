@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace FuelLogAPI.Controllers
+namespace BuisinessLogic.Controllers
 {
     [ApiController]
     [Route("[controller]")]

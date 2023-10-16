@@ -1,11 +1,12 @@
-using FuelLogAPI.Models.Enums;
+using BuisinessLogic.Models.Enums;
 
-namespace FuelLogAPI.Models
+namespace BuisinessLogic.Models
 {
-    public class CreateVehicle
+    public class Vehicle
     {
-        public string Model;
+        public int Id;
         public string LicensePlate;
+        public string Model;
         public string Color;
         public FuelType FuelType;
         public int WheelCount;
