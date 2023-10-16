@@ -1,3 +1,5 @@
+using BuisinessLogic.Intefaces;
+using FuelLogAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FuelLogAPI.Controllers
@@ -6,38 +8,38 @@ namespace FuelLogAPI.Controllers
     [Route("[controller]")]
     public class VehicleController : Controller
     {
+        private IVehicleService _vehicleService = new VehicleService();
+
         [HttpPost]
         public IActionResult AddVehicle()
         {
-            throw new NotImplementedException();
+            _vehicleService.AddVehicle(CreateVehicle createVehicle);
             return Ok();
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            throw new NotImplementedException();
-            return Ok();
+            return _vehicleService.GetAllVehicles();
         }
 
         [HttpGet("{id}")]
         public IActionResult GetVehicle()
         {
-            throw new NotImplementedException();
-            return Ok();
+            return _vehicleService.GetVehicleById(GetVehicleById getVehicleById);
         }
 
         [HttpPut]
         public IActionResult UpdateVehicle()
         {
-            throw new NotImplementedException();
+            _vehicleService.UpdateVehicle(UpdateVehicleRequest updateVehicleRequest);
             return Ok();
         }
 
         [HttpDelete]
         public IActionResult DeleteVehicle()
         {
-            throw new NotImplementedException();
+            _vehicleService.DeleteVehicle(DeleteVehicleRequest deleteVehicleRequest);
             return Ok();
         }
     }
