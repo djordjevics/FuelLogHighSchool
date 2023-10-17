@@ -1,6 +1,6 @@
-using BuisinessLogic.Models.Enums;
+using BusinessLogic.Models.Enums;
 
-namespace BuisinessLogic.Models
+namespace BusinessLogic.Models
 {
     public class CreateFuelLog
     {

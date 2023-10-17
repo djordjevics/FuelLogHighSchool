@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 using BuisinessLogic.Intefaces;
 using BuisinessLogic.Intefaces.Implementation;
 using BuisinessLogic.Models;
+=======
+using BusinessLogic.Interfaces;
+using BusinessLogic.Models;
+>>>>>>> main
 using Microsoft.AspNetCore.Mvc;
 
-namespace BuisinessLogic.Controllers
+namespace BusinessLogic.Controllers
 {
     [ApiController]
     [Route("[controller]")]
