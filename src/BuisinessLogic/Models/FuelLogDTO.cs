@@ -4,46 +4,46 @@ namespace BusinessLogic.Models
 {
     public class FuelLogDTO
     {
-        private double _km;
-        private double _liters;
-        private double _rsd;
+        public double km;
+        public double liters;
+        public double rsd;
 
         public int Id;
         public double Odometer
         {
             get {
-                if (OdometerUnit == OdometerUnit.MI) { return _km / 1.609; }
-                else { return _km; }
+                if (OdometerUnit == OdometerUnit.MI) { return km / 1.609; }
+                else { return km; }
             }
             set {
-                if (OdometerUnit == OdometerUnit.MI) { _km = value * 1.609; }
-                else { _km = value; }
+                if (OdometerUnit == OdometerUnit.MI) { km = value * 1.609; }
+                else { km = value; }
             }
         }
         public OdometerUnit OdometerUnit;
         public double AmountFilled
         {
             get { 
-                if (AmountFilledUnit == AmountFilledUnit.IMPGALLONS) { return _liters / 4.546; }
-                else if (AmountFilledUnit == AmountFilledUnit.USGALLONS) { return _liters * 0.246; }
-                else { return _liters; }
+                if (AmountFilledUnit == AmountFilledUnit.IMPGALLONS) { return liters / 4.546; }
+                else if (AmountFilledUnit == AmountFilledUnit.USGALLONS) { return liters * 0.246; }
+                else { return liters; }
             }
             set { 
-                if (AmountFilledUnit == AmountFilledUnit.IMPGALLONS) { _liters = value * 4.546; }
-                else if (AmountFilledUnit == AmountFilledUnit.USGALLONS) { _liters = value / 0.246; }
-                else { _liters = value; }
+                if (AmountFilledUnit == AmountFilledUnit.IMPGALLONS) { liters = value * 4.546; }
+                else if (AmountFilledUnit == AmountFilledUnit.USGALLONS) { liters = value / 0.246; }
+                else { liters = value; }
             }
         }
         public AmountFilledUnit AmountFilledUnit;
         public double Cost
         {
             get { 
-                if (CostCurrency == CostCurrency.EUR) { return _rsd / 117.18; }
-                else return _rsd;
+                if (CostCurrency == CostCurrency.EUR) { return rsd / 117.18; }
+                else return rsd;
             }
             set {
-                if (CostCurrency == CostCurrency.EUR) { _rsd = value * 117.18; }
-                else _rsd = value;
+                if (CostCurrency == CostCurrency.EUR) { rsd = value * 117.18; }
+                else rsd = value;
             }
         }
         public CostCurrency CostCurrency;
