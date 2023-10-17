@@ -5,13 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-<<<<<<< HEAD
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
-    <ProjectReference Include="..\FuelLog\FuelLogAPI.csproj" />
   </ItemGroup>
-
-=======
->>>>>>> main
 </Project>
