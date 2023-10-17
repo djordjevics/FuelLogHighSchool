@@ -1,3 +1,5 @@
+using BusinessLogic.Interfaces;
+using BusinessLogic.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BusinessLogic.Controllers
@@ -6,46 +8,54 @@ namespace BusinessLogic.Controllers
     [Route("[controller]")]
     public class FuelLogController : Controller
     {
-    
+        private IFuelLogService _fuelLogService = new FuelLogService();
+
         [HttpPost]
-        public IActionResult AddLog()
+        public IActionResult AddLog(CreateFuelLog createFuelLog)
         {
-           throw new NotImplementedException();
-           return Ok();
+            _fuelLogService.AddFuelLogToVehicle(createFuelLog);
+            return Ok();
         }
         
         [HttpGet]
         public IActionResult GetAll()
         {
-            throw new NotImplementedException();
+            _fuelLogService.GetAllFuelLogs();
             return Ok();
         }
         
         [HttpGet("vehicle/{vehicleId}")]
-        public IActionResult GetByVehicle()
+        public IActionResult GetByVehicle(int vehicleId)
         {
-            throw new NotImplementedException();
-            return Ok();
+            return Ok(_fuelLogService.GetAllFuelLogsByVehicleId(new()
+            { 
+                VehicleId = vehicleId 
+            }));
         }
         
         [HttpGet("{id}")]
-        public IActionResult GetById()
+        public IActionResult GetById(int fuelLogId)
         {
-            throw new NotImplementedException();
-            return Ok();
+            return Ok(_fuelLogService.GetFuelLogById(new()
+            {
+                Id = fuelLogId
+            }));
         }
         
         [HttpPut]
-        public IActionResult UpdateLog()
+        public IActionResult UpdateLog(UpdateFuelLogRequest updateFuelLogRequest)
         {
-            throw new NotImplementedException();
+            _fuelLogService.UpdateFuelLog(updateFuelLogRequest);
             return Ok();
         }
         
         [HttpDelete]
-        public IActionResult DeleteLog()
+        public IActionResult DeleteLog(int fuelLogId)
         {
-            throw new NotImplementedException();
+            _fuelLogService.DeleteFuelLog(new()
+            {
+                Id = fuelLogId
+            });
             return Ok();
         }
     }

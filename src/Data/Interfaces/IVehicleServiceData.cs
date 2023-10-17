@@ -1,8 +1,8 @@
 ﻿using Data.Models;
 
-namespace Data.Intefaces
+namespace Data.Interfaces
 {
-    public interface IVehicleService
+    public interface IVehicleServiceData
     {
         IEnumerable<VehicleData> GetAllVehicles();
         VehicleData GetVehicleById(int id);
