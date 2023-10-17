@@ -1,22 +1,16 @@
-<<<<<<<< HEAD:src/BuisinessLogic/Intefaces/Implementation/FuelLogService.cs
-﻿using BuisinessLogic.Models;
-using Data.Intefaces;
-using Data.Intefaces.Implementation;
-
-namespace BuisinessLogic.Intefaces.Implementation
-========
 ﻿using BusinessLogic.Models;
+using Data.Interfaces;
+using Data.Interfaces.Implementation;
 
 namespace BusinessLogic.Interfaces.Implementations
->>>>>>>> main:src/BuisinessLogic/Interfaces/Implementations/FuelLogService.cs
 {
     public class FuelLogService : IFuelLogService
     {
-        private IFuelLogService _fuelLogService = new FuelLogService();
+        private IFuelLogServiceData _fuelLogService = new FuelLogServiceData();
 
         public void AddFuelLogToVehicle(CreateFuelLog createFuelLog)
         {
-
+            _fuelLogService.AddFuelLogToVehicle();
         }
 
         public void DeleteFuelLog(DeleteFuelLogRequest deleteFuelLogRequest)
