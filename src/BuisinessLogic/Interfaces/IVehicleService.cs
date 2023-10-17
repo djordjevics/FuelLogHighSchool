@@ -1,6 +1,6 @@
-﻿using BuisinessLogic.Models;
+﻿using BusinessLogic.Models;
 
-namespace BuisinessLogic.Intefaces
+namespace BusinessLogic.Interfaces
 {
     public interface IVehicleService
     {

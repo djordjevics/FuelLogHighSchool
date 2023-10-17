@@ -1,8 +1,8 @@
 ﻿using Data.Models;
 
-namespace Data.Intefaces.Implementation
+namespace Data.Interfaces.Implementation
 {
-    public class FuelLogService : IFuelLogServiceData
+    public class FuelLogServiceData : IFuelLogServiceData
     {
         public void AddFuelLogToVehicle(FuelLogData fuelLog)
         {

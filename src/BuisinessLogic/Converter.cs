@@ -1,4 +1,4 @@
-﻿namespace BuisinessLogic
+﻿namespace BusinessLogic
 {
     public class Converter
     {
