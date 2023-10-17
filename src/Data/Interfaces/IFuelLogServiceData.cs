@@ -1,8 +1,8 @@
 ﻿using Data.Models;
 
-namespace Data.Intefaces
+namespace Data.Interfaces
 {
-    public interface IFuelLogService
+    public interface IFuelLogServiceData
     {
         IEnumerable<FuelLogData> GetAllFuelLogs();
         IEnumerable<FuelLogData> GetAllFuelLogsByVehicleId(int id);
