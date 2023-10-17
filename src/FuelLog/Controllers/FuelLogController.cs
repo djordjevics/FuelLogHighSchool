@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-using BuisinessLogic.Intefaces;
-using BuisinessLogic.Intefaces.Implementation;
-using BuisinessLogic.Models;
-=======
 using BusinessLogic.Interfaces;
+using BusinessLogic.Interfaces.Implementations;
 using BusinessLogic.Models;
->>>>>>> main
 using Microsoft.AspNetCore.Mvc;
 
 namespace BusinessLogic.Controllers
