@@ -12,9 +12,9 @@ namespace BusinessLogic.Mappers
             return new FuelLogData
             {
                 Id = dto.Id,
-                Odometer = dto.OdometerUnit == OdometerUnit.MI ? dto.Odometer.MiToKm() : dto.Odometer,
-                AmountFilled = dto.AmountFilledUnit == AmountFilledUnit.IMPGALLONS ? dto.AmountFilled.ImpGallonsToLiters() : dto.AmountFilledUnit == AmountFilledUnit.USGALLONS ? dto.AmountFilled.UsGallonsToLiters() : dto.AmountFilled,
-                Cost = dto.CostCurrency == CostCurrency.EUR ? dto.Cost.EurToRsd() : dto.Cost,
+                Odometer = dto.Odometer,
+                AmountFilled = dto.AmountFilled,
+                Cost = dto.Cost,
                 VehicleId = dto.VehicleId
             };
         }
