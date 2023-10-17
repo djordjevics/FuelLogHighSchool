@@ -33,12 +33,12 @@ namespace BusinessLogic.Mappers
         {
             return new FuelLogDTO
             {
-                Odometer = req.Odometer,
                 OdometerUnit = req.OdometerUnit,
-                AmountFilled = req.AmountFilled,
                 AmountFilledUnit = req.AmountFilledUnit,
-                Cost = req.Cost,
                 CostCurrency = req.CostCurrency,
+                Odometer = req.Odometer,
+                AmountFilled = req.AmountFilled,
+                Cost = req.Cost,
                 VehicleId = req.VehicleId
             };
         }
@@ -47,12 +47,12 @@ namespace BusinessLogic.Mappers
         {
             return new FuelLogDTO
             {
-                Odometer = req.UpdatedFuelLog.Odometer,
                 OdometerUnit = req.UpdatedFuelLog.OdometerUnit,
-                AmountFilled = req.UpdatedFuelLog.AmountFilled,
                 AmountFilledUnit = req.UpdatedFuelLog.AmountFilledUnit,
-                Cost = req.UpdatedFuelLog.Cost,
                 CostCurrency = req.UpdatedFuelLog.CostCurrency,
+                Odometer = req.UpdatedFuelLog.Odometer,
+                AmountFilled = req.UpdatedFuelLog.AmountFilled,
+                Cost = req.UpdatedFuelLog.Cost,
                 VehicleId = req.UpdatedFuelLog.VehicleId
             };
         }
