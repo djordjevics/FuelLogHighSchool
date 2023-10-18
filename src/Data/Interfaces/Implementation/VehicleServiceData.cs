@@ -6,11 +6,11 @@ using Data.Models;
 
 namespace Data.Interfaces.Implementation
 {
-    public class VehicleService : IVehicleServiceData
+    public class VehicleServiceData : IVehicleServiceData
     {
         private List<VehicleData> _vehicles;
         private const string filePath = @"";
-        public VehicleService()
+        public VehicleServiceData()
         {
 
             _vehicles = JsonSerializer.Deserialize<List<VehicleData>>(File.Open(filePath, FileMode.OpenOrCreate));

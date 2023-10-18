@@ -4,12 +4,12 @@ using Data.Models;
 
 namespace Data.Interfaces.Implementation
 {
-    public class FuelLogService : IFuelLogServiceData
+    public class FuelLogServiceData : IFuelLogServiceData
     {
         private List<FuelLogData> _fuelLogs;
         private const string filePath = @"";
 
-        public FuelLogService() 
+        public FuelLogServiceData() 
         {
             _fuelLogs = JsonSerializer.Deserialize<List<FuelLogData>>(File.Open(filePath, FileMode.OpenOrCreate));
         }
