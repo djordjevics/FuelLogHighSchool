@@ -2,10 +2,10 @@ namespace Data.Models
 {
     public class FuelLogData
     {
-        public int Id;
-        public double Odometer;
-        public double AmountFilled;
-        public double Cost;
-        public int VehicleId;
+        public int Id { get; set; }
+        public double Odometer { get; set; }
+        public double AmountFilled { get; set; }
+        public double Cost {  get; set; }
+        public int VehicleId { get; set; }
     }
 }
