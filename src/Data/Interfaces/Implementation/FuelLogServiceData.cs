@@ -7,7 +7,7 @@ namespace Data.Interfaces.Implementation
     public class FuelLogServiceData : IFuelLogServiceData
     {
         private List<FuelLogData> _fuelLogs;
-        private const string filePath = @"";
+        private const string filePath = @"FuelLogs.json";
 
         public FuelLogServiceData() 
         {

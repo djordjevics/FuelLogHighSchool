@@ -9,7 +9,7 @@ namespace Data.Interfaces.Implementation
     public class VehicleServiceData : IVehicleServiceData
     {
         private List<VehicleData> _vehicles;
-        private const string filePath = @"";
+        private const string filePath = @"Vehicles.json";
         public VehicleServiceData()
         {
 
