@@ -18,14 +18,15 @@ namespace Data.Models
 
         public VehicleData ToObject(string str)
         {
+            var arr  = str.Split(",");
             return new()
             {
-                Id = int.Parse(str.Split(",")[0]),
-                Model = str.Split(",")[1],
-                LicensePlate = str.Split(",")[2],
-                Color = str.Split(",")[3],
-                FuelType = str.Split(",")[4],
-                WheelCount = int.Parse(str.Split(",")[5])
+                Id = int.Parse(arr[0]),
+                Model = arr[1],
+                LicensePlate = arr[2],
+                Color = arr[3],
+                FuelType = arr[4],
+                WheelCount = int.Parse(arr[5])
             };
         }
     }
