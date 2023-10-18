@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelLogAPI", "FuelLog\FuelL
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04F013F3-2C1B-43E5-A4BF-18C107F78ECD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuisinessLogic", "BuisinessLogic\BuisinessLogic.csproj", "{03244511-9EEF-41A8-9299-1F38D5C7890A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "BuisinessLogic\BusinessLogic.csproj", "{03244511-9EEF-41A8-9299-1F38D5C7890A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{BD8CEF09-95BC-4036-8503-BD62E05E1FAD}"
 EndProject

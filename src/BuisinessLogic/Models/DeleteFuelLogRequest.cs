@@ -1,4 +1,4 @@
-namespace BuisinessLogic.Models
+namespace BusinessLogic.Models
 {
     public class DeleteFuelLogRequest
     {

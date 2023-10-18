@@ -1,8 +1,9 @@
-using BuisinessLogic.Intefaces;
-using BuisinessLogic.Models;
+using BusinessLogic.Interfaces;
+using BusinessLogic.Interfaces.Implementations;
+using BusinessLogic.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BuisinessLogic.Controllers
+namespace BusinessLogic.Controllers
 {
     [ApiController]
     [Route("[controller]")]

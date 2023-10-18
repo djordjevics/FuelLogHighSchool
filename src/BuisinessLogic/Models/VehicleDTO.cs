@@ -1,4 +1,4 @@
-using BuisinessLogic.Models.Enums;
+using BusinessLogic.Models.Enums;
 
 namespace BusinessLogic.Models
 {
