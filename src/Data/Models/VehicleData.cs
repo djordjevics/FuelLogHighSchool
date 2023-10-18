@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace Data.Models
 {
     public class VehicleData
@@ -9,4 +11,5 @@ namespace Data.Models
         public string FuelType;
         public int WheelCount;
     }
+
 }
