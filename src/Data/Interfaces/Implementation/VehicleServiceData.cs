@@ -1,32 +1,69 @@
-﻿using Data.Models;
+﻿using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text.Json;
+using Data.Models;
+
 
 namespace Data.Interfaces.Implementation
 {
     public class VehicleServiceData : IVehicleServiceData
     {
+        private List<VehicleData> _vehicles;
+        private const string filePath = @"vehicles.json";
+        public VehicleServiceData()
+        {
+            try
+            {
+                FileStream file = File.Open(filePath, FileMode.Open);
+                _vehicles = JsonSerializer.Deserialize<List<VehicleData>>(file);
+                file.Close();
+
+            }catch (Exception ex)
+            {
+                FileStream file = File.Open(filePath, FileMode.CreateNew);
+                file.Close();
+
+                _vehicles = new();
+                Save();
+            }
+        }
+
+        private void Save()
+        {
+            File.WriteAllText(filePath, JsonSerializer.Serialize(_vehicles));
+
+        }
+
         public void AddVehicle(VehicleData vehicle)
         {
-            throw new NotImplementedException();
+            _vehicles.Add(vehicle);
+            Save();
         }
 
         public void DeleteVehicle(int id)
         {
-            throw new NotImplementedException();
+            var index = _vehicles.FindIndex(x => x.Id == id);
+            _vehicles.RemoveAt(index);
+            Save();
         }
 
         public IEnumerable<VehicleData> GetAllVehicles()
         {
-            throw new NotImplementedException();
+            return _vehicles;
+
         }
 
         public VehicleData GetVehicleById(int id)
         {
-            throw new NotImplementedException();
+            return _vehicles.Single(x => x.Id == id);
         }
 
-        public void UpdateVehicle(VehicleData vehicle)
+        public void UpdateVehicle(VehicleData updatedVehicle)
         {
-            throw new NotImplementedException();
+            var index = _vehicles.FindIndex(x => x.Id == updatedVehicle.Id);
+            _vehicles.RemoveAt(index);
+            _vehicles.Add(updatedVehicle);
+            Save();
         }
     }
 }
