@@ -3,9 +3,9 @@ namespace Data.Models
     public class FuelLogData
     {
         public int Id;
-        public int Odometer;
-        public int AmountFilled;
-        public int Cost;
+        public double Odometer;
+        public double AmountFilled;
+        public double Cost;
         public int VehicleId;
     }
 }

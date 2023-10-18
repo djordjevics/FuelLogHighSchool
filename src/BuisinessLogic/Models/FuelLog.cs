@@ -5,11 +5,11 @@ namespace BusinessLogic.Models
     public class FuelLog
     {
         public int Id;
-        public int Odometer;
+        public double Odometer;
         public OdometerUnit OdometerUnit;
-        public int AmountFilled;
+        public double AmountFilled;
         public AmountFilledUnit AmountFilledUnit;
-        public int Cost;
+        public double Cost;
         public CostCurrency CostCurrency;
         public int VehicleId;
     }
