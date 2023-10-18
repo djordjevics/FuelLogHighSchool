@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Models;
+﻿using BusinessLogic.Mappers;
+using BusinessLogic.Models;
 
 namespace BusinessLogic.Interfaces.Implementations
 {
