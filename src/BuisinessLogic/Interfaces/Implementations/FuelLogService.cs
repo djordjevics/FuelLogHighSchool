@@ -7,36 +7,46 @@ namespace BusinessLogic.Interfaces.Implementations
 {
     public class FuelLogService : IFuelLogService
     {
-        private IFuelLogServiceData _fuelLogService = new FuelLogServiceData();
+        private IFuelLogServiceData _fuelLogServiceData = new FuelLogServiceData();
 
         public void AddFuelLogToVehicle(CreateFuelLog createFuelLog)
         {
-            _fuelLogService.AddFuelLogToVehicle();
+            _fuelLogServiceData.AddFuelLogToVehicle(createFuelLog.ToFuelLogDTO().ToFuelLogData());
         }
 
         public void DeleteFuelLog(DeleteFuelLogRequest deleteFuelLogRequest)
         {
-            throw new NotImplementedException();
+            _fuelLogServiceData.DeleteFuelLog(deleteFuelLogRequest.Id);
         }
 
         public IEnumerable<FuelLog> GetAllFuelLogs()
         {
-            throw new NotImplementedException();
+            List<FuelLog> fuelLogs = new();
+            foreach (var el in _fuelLogServiceData.GetAllFuelLogs())
+            {
+                fuelLogs.Add(el.ToFuelLogDTO().ToFuelLog());
+            }
+            return fuelLogs;
         }
 
         public IEnumerable<FuelLog> GetAllFuelLogsByVehicleId(GetFuelLogsByVehicleId getFuelLogsByVehicleId)
         {
-            throw new NotImplementedException();
+            List<FuelLog> fuelLogs = new();
+            foreach (var el in _fuelLogServiceData.GetAllFuelLogsByVehicleId(getFuelLogsByVehicleId.VehicleId))
+            {
+                fuelLogs.Add(el.ToFuelLogDTO().ToFuelLog());
+            }
+            return fuelLogs;
         }
 
         public FuelLog GetFuelLogById(GetFuelLogById getFuelLogById)
         {
-            throw new NotImplementedException();
+            return _fuelLogServiceData.GetFuelLogById(getFuelLogById.Id).ToFuelLogDTO().ToFuelLog();
         }
 
         public void UpdateFuelLog(UpdateFuelLogRequest updateFuelLogRequest)
         {
-            throw new NotImplementedException();
+            _fuelLogServiceData.UpdateFuelLog(updateFuelLogRequest.toFuelLogDTO().ToFuelLogData());
         }
     }
 }
