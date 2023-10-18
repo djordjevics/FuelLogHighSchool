@@ -31,7 +31,7 @@ namespace Data.Interfaces.Implementation
 
         private void Save()
         {
-            File.WriteAllText(filePath, JsonSerializer.Serialize<List<VehicleData>>(_vehicles));
+            File.WriteAllText(filePath, JsonSerializer.Serialize(_vehicles));
         }
 
         public void AddVehicle(VehicleData vehicle)
