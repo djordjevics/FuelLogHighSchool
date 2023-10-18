@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Data.Models;
 
 
@@ -30,8 +31,8 @@ namespace Data.Interfaces.Implementation
 
         private void Save()
         {
-            File.WriteAllText(filePath, JsonSerializer.Serialize(_vehicles));
-
+            var nesto = JsonSerializer.Serialize<List<VehicleData>>(_vehicles);
+            File.WriteAllText(filePath, nesto);
         }
 
         public void AddVehicle(VehicleData vehicle)

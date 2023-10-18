@@ -4,10 +4,10 @@ namespace BusinessLogic.Models
 {
     public class CreateVehicle
     {
-        public string Model;
-        public string LicensePlate;
-        public string Color;
-        public FuelType FuelType;
-        public int WheelCount;
+        public string Model { get; set; }
+        public string LicensePlate { get; set; }
+        public string Color { get; set; }
+        public FuelType FuelType { get; set; }
+        public int WheelCount { get; set; }
     }
 }
