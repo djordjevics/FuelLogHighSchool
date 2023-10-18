@@ -1,14 +1,14 @@
-using FuelLogAPI.Models.Enums;
+using BusinessLogic.Models.Enums;
 
-namespace FuelLogAPI.Models
+namespace BusinessLogic.Models
 {
     public class CreateFuelLog
     {
-        public int Odometer;
+        public double Odometer;
         public OdometerUnit OdometerUnit;
-        public int AmountFilled;
+        public double AmountFilled;
         public AmountFilledUnit AmountFilledUnit;
-        public int Cost;
+        public double Cost;
         public CostCurrency CostCurrency;
         public int VehicleId;
     }

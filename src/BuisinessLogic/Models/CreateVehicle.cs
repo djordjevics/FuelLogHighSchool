@@ -2,11 +2,10 @@ using BusinessLogic.Models.Enums;
 
 namespace BusinessLogic.Models
 {
-    public class VehicleDTO
+    public class CreateVehicle
     {
-        public int Id;
-        public string LicensePlate;
         public string Model;
+        public string LicensePlate;
         public string Color;
         public FuelType FuelType;
         public int WheelCount;

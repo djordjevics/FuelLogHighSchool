@@ -1,7 +1,6 @@
 ﻿using BusinessLogic.Models;
-using FuelLogAPI.Models;
 
-namespace BuisinessLogic.Intefaces
+namespace BusinessLogic.Interfaces
 {
     public interface IFuelLogService
     {

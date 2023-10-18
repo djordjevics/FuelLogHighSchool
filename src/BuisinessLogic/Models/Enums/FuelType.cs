@@ -1,4 +1,4 @@
-﻿namespace BuisinessLogic.Models.Enums
+﻿namespace BusinessLogic.Models.Enums
 {
     public enum FuelType
     {

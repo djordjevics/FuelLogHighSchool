@@ -1,4 +1,4 @@
-namespace FuelLogAPI.Models
+namespace BusinessLogic.Models
 {
     public class UpdateVehicleRequest
     {

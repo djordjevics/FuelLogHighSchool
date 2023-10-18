@@ -1,4 +1,6 @@
-namespace FuelLogAPI.Models
+using BusinessLogic.Models.Enums;
+
+namespace BusinessLogic.Models
 {
     public class UpdateFuelLogRequest
     {
