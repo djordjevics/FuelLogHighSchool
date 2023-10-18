@@ -1,38 +1,58 @@
-﻿using Data.Models;
+﻿using System.Runtime.CompilerServices;
+using System.Text.Json;
+using Data.Models;
 
 namespace Data.Intefaces.Implementation
 {
-    public class FuelLogService : IFuelLogService
+    public class FuelLogService : IFuelLogServiceData
     {
-        public string file_path = @".\FuelLogs.csv";
+        private List<FuelLogData> _fuelLogs;
+        private const string filePath = @"";
+
+        public FuelLogService() 
+        {
+            _fuelLogs = JsonSerializer.Deserialize<List<FuelLogData>>(File.Open(filePath, FileMode.OpenOrCreate));
+        }
+
+        private void Save()
+        {
+            File.Open(filePath, FileMode.Truncate);
+            File.WriteAllText(filePath, JsonSerializer.Serialize(_fuelLogs));
+        }
         public void AddFuelLogToVehicle(FuelLogData fuelLog)
         {
-            throw new NotImplementedException();
+            _fuelLogs.Add(fuelLog);
+            Save();
         }
 
         public void DeleteFuelLog(int id)
         {
-            throw new NotImplementedException();
+            var index = _fuelLogs.FindIndex(x => x.Id == id);
+            _fuelLogs.RemoveAt(index);
+            Save();
         }
 
         public IEnumerable<FuelLogData> GetAllFuelLogs()
         {
-            throw new NotImplementedException();
+            return _fuelLogs;
         }
 
         public IEnumerable<FuelLogData> GetAllFuelLogsByVehicleId(int id)
         {
-            throw new NotImplementedException();
+            return _fuelLogs.FindAll(x => x.VehicleId == id);
         }
 
         public FuelLogData GetFuelLogById(int id)
         {
-            throw new NotImplementedException();
+            return _fuelLogs.Single(x => x.Id == id);
         }
 
-        public void UpdateFuelLog(FuelLogData fuelLog)
+        public void UpdateFuelLog(FuelLogData updatedFuelLog)
         {
-            throw new NotImplementedException();
+            var index = _fuelLogs.FindIndex(x => x.Id == updatedFuelLog.Id);
+            _fuelLogs.RemoveAt(index);
+            _fuelLogs.Add(updatedFuelLog);
+            Save();
         }
     }
 }

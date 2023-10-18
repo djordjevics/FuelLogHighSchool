@@ -7,10 +7,5 @@ namespace Data.Models
         public int AmountFilled;
         public int Cost;
         public int VehicleId;
-
-        public override string ToString()
-        {
-            return ( Id + "," + Odometer + "," + AmountFilled + "," + Cost + "," + VehicleId);
-        }
     }
 }

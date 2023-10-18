@@ -6,7 +6,7 @@ using Data.Models;
 
 namespace Data.Intefaces.Implementation
 {
-    public class VehicleService : IVehicleService
+    public class VehicleService : IVehicleServiceData
     {
         private List<VehicleData> _vehicles;
         private const string filePath = @"";
@@ -51,7 +51,10 @@ namespace Data.Intefaces.Implementation
 
         public void UpdateVehicle(VehicleData updatedVehicle)
         {
-            throw new NotImplementedException();
+            var index = _vehicles.FindIndex(x => x.Id == updatedVehicle.Id);
+            _vehicles.RemoveAt(index);
+            _vehicles.Add(updatedVehicle);
+            Save();
         }
     }
 }
