@@ -1,32 +1,42 @@
-﻿using BusinessLogic.Models;
+﻿using BusinessLogic.Mappers;
+using BusinessLogic.Models;
+using Data.Interfaces;
+using Data.Interfaces.Implementation;
 
-namespace BusinessLogic.Interfaces.Implementations
+namespace BusinessLogic.Interfaces.Implementations;
+
+public class VehicleService : IVehicleService
 {
-    public class VehicleService : IVehicleService
+    private readonly IVehicleServiceData _vehicleServiceData = new VehicleServiceData();
+
+    public void AddVehicle(CreateVehicle createVehicle)
     {
-        public void AddVehicle(CreateVehicle createVehicle)
+        _vehicleServiceData.AddVehicle(createVehicle.ToVehicleDTO().ToVehicleData());
+    }
+
+    public void DeleteVehicle(DeleteVehicleRequest deleteVehicleRequest)
+    {
+        _vehicleServiceData.DeleteVehicle(deleteVehicleRequest.Id);
+    }
+
+    public IEnumerable<Vehicle> GetAllVehicles()
+    {
+        List<Vehicle> vehicles = new();
+        foreach (var el in _vehicleServiceData.GetAllVehicles())
         {
-            throw new NotImplementedException();
+            vehicles.Add(el.ToVehicleDTO().ToVehicle());
         }
 
-        public void DeleteVehicle(DeleteVehicleRequest deleteVehicleRequest)
-        {
-            throw new NotImplementedException();
-        }
+        return vehicles;
+    }
 
-        public IEnumerable<Vehicle> GetAllVehicles()
-        {
-            throw new NotImplementedException();
-        }
+    public Vehicle GetVehicleById(GetVehicleById getVehicleById)
+    {
+        return _vehicleServiceData.GetVehicleById(getVehicleById.Id).ToVehicleDTO().ToVehicle();
+    }
 
-        public Vehicle GetVehicleById(GetVehicleById getVehicleById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateVehicle(UpdateVehicleRequest updateVehicleRequest)
-        {
-            throw new NotImplementedException();
-        }
+    public void UpdateVehicle(UpdateVehicleRequest updateVehicleRequest)
+    {
+        _vehicleServiceData.UpdateVehicle(updateVehicleRequest.ToVehicleDTO().ToVehicleData());
     }
 }
