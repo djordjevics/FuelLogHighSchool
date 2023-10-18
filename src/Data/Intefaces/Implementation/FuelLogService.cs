@@ -4,6 +4,7 @@ namespace Data.Intefaces.Implementation
 {
     public class FuelLogService : IFuelLogService
     {
+        public string file_path = @".\FuelLogs.csv";
         public void AddFuelLogToVehicle(FuelLogData fuelLog)
         {
             throw new NotImplementedException();

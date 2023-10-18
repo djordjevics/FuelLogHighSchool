@@ -6,6 +6,11 @@ namespace Data.Models
         public int Odometer;
         public int AmountFilled;
         public int Cost;
-        public int TruckId;
+        public int VehicleId;
+
+        public override string ToString()
+        {
+            return ( Id + "," + Odometer + "," + AmountFilled + "," + Cost + "," + VehicleId);
+        }
     }
 }
