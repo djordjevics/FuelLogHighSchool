@@ -9,26 +9,35 @@ namespace Data.Interfaces.Implementation
     public class VehicleServiceData : IVehicleServiceData
     {
         private List<VehicleData> _vehicles;
-        private const string filePath = @"";
+        private const string filePath = @"vehicles.json";
         public VehicleServiceData()
         {
+            try
+            {
+                FileStream file = File.Open(filePath, FileMode.Open);
+                _vehicles = JsonSerializer.Deserialize<List<VehicleData>>(file);
+                file.Close();
 
-            _vehicles = JsonSerializer.Deserialize<List<VehicleData>>(File.Open(filePath, FileMode.OpenOrCreate));
+            }catch (Exception ex)
+            {
+                FileStream file = File.Open(filePath, FileMode.CreateNew);
+                file.Close();
+
+                _vehicles = new();
+                Save();
+            }
         }
 
         private void Save()
         {
-            File.Open(filePath, FileMode.Truncate);
             File.WriteAllText(filePath, JsonSerializer.Serialize(_vehicles));
+
         }
-
-
 
         public void AddVehicle(VehicleData vehicle)
         {
             _vehicles.Add(vehicle);
             Save();
-            
         }
 
         public void DeleteVehicle(int id)

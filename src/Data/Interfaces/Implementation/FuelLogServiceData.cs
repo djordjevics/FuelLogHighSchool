@@ -7,17 +7,31 @@ namespace Data.Interfaces.Implementation
     public class FuelLogServiceData : IFuelLogServiceData
     {
         private List<FuelLogData> _fuelLogs;
-        private const string filePath = @"";
+        private const string filePath = @"FuelLog.json";
 
-        public FuelLogServiceData() 
+        public FuelLogServiceData()
         {
-            _fuelLogs = JsonSerializer.Deserialize<List<FuelLogData>>(File.Open(filePath, FileMode.OpenOrCreate));
+            try
+            {
+                FileStream file = File.Open(filePath, FileMode.Open);
+                _fuelLogs = JsonSerializer.Deserialize<List<FuelLogData>>(file);
+                file.Close();
+
+            }
+            catch (Exception ex)
+            {
+                FileStream file = File.Open(filePath, FileMode.CreateNew);
+                file.Close();
+
+                _fuelLogs = new();
+                Save();
+            }
         }
 
         private void Save()
         {
-            File.Open(filePath, FileMode.Truncate);
             File.WriteAllText(filePath, JsonSerializer.Serialize(_fuelLogs));
+
         }
         public void AddFuelLogToVehicle(FuelLogData fuelLog)
         {
