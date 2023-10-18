@@ -4,7 +4,7 @@ using System.Text.Json;
 using Data.Models;
 
 
-namespace Data.Intefaces.Implementation
+namespace Data.Interfaces.Implementation
 {
     public class VehicleService : IVehicleServiceData
     {

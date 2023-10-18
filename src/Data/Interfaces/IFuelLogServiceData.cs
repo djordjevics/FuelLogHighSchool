@@ -1,6 +1,6 @@
 ﻿using Data.Models;
 
-namespace Data.Intefaces
+namespace Data.Interfaces
 {
     public interface IFuelLogServiceData
     {
