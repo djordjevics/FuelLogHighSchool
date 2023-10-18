@@ -7,7 +7,7 @@ namespace BusinessLogic.Interfaces.Implementations
 {
     public class FuelLogService : IFuelLogService
     {
-        private IFuelLogServiceData _fuelLogServiceData = new FuelLogServiceData();
+        private readonly IFuelLogServiceData _fuelLogServiceData = new FuelLogServiceData();
 
         public void AddFuelLogToVehicle(CreateFuelLog createFuelLog)
         {

@@ -1,30 +1,42 @@
-﻿using BusinessLogic.Models;
+﻿using BusinessLogic.Mappers;
+using BusinessLogic.Models;
+using Data.Interfaces;
+using Data.Interfaces.Implementation;
+
 namespace BusinessLogic.Interfaces.Implementations;
 
 public class VehicleService : IVehicleService
 {
+    private readonly IVehicleServiceData _vehicleServiceData = new VehicleServiceData();
+
     public void AddVehicle(CreateVehicle createVehicle)
     {
-        throw new NotImplementedException();
+        _vehicleServiceData.AddVehicle(createVehicle.ToVehicleDTO().ToVehicleData());
     }
 
     public void DeleteVehicle(DeleteVehicleRequest deleteVehicleRequest)
     {
-        throw new NotImplementedException();
+        _vehicleServiceData.DeleteVehicle(deleteVehicleRequest.Id);
     }
 
     public IEnumerable<Vehicle> GetAllVehicles()
     {
-        throw new NotImplementedException();
+        List<Vehicle> vehicles = new();
+        foreach (var el in _vehicleServiceData.GetAllVehicles())
+        {
+            vehicles.Add(el.ToVehicleDTO().ToVehicle());
+        }
+
+        return vehicles;
     }
 
     public Vehicle GetVehicleById(GetVehicleById getVehicleById)
     {
-        throw new NotImplementedException();
+        return _vehicleServiceData.GetVehicleById(getVehicleById.Id).ToVehicleDTO().ToVehicle();
     }
 
     public void UpdateVehicle(UpdateVehicleRequest updateVehicleRequest)
     {
-        throw new NotImplementedException();
+        _vehicleServiceData.UpdateVehicle(updateVehicleRequest.ToVehicleDTO().ToVehicleData());
     }
 }
