@@ -35,6 +35,7 @@ namespace Data.Interfaces.Implementation
         }
         public void AddFuelLogToVehicle(FuelLogData fuelLog)
         {
+            fuelLog.Id = _fuelLogs.Count;
             _fuelLogs.Add(fuelLog);
             Save();
         }

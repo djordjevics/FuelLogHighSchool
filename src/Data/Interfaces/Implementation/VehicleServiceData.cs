@@ -36,6 +36,7 @@ namespace Data.Interfaces.Implementation
 
         public void AddVehicle(VehicleData vehicle)
         {
+            vehicle.Id = _vehicles.Count;
             _vehicles.Add(vehicle);
             Save();
         }
