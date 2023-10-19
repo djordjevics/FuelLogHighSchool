@@ -57,8 +57,19 @@ public class VehicleService : IVehicleService
         var log1 = _fuelLogService.GetFuelLogById(new() { Id = fuelLog1Id });
         var log2 = _fuelLogService.GetFuelLogById(new() { Id = fuelLog2Id });
 
-        var logs = _fuelLogService.GetAllFuelLogsByVehicleId(new() { VehicleId = vehicleId });
+        var logsFromVehicle = _fuelLogService.GetAllFuelLogsByVehicleId(new() { VehicleId = vehicleId });
+        List<FuelLog> logs = new();
+
+        for (int i = fuelLog1Id; i <= fuelLog2Id; i++)
+        {
+            if (logsFromVehicle.Single(x => x.Id == i) != null)
+            {
+                logs.Add(logsFromVehicle.Single(x => x.Id == i));
+            }
+        }
 
         double fuelConsumptedSum = logs.Sum(x => x.AmountFilled);
+
+        return (log2.Odometer - log1.Odometer) / fuelConsumptedSum;
     }
 }
