@@ -2,6 +2,6 @@ namespace BusinessLogic.Models
 {
     public class UpdateVehicleRequest
     {
-        public Vehicle UpdatedVehicle;
+        public Vehicle UpdatedVehicle { get; set; }
     }
 }

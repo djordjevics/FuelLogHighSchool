@@ -4,6 +4,6 @@ namespace BusinessLogic.Models
 {
     public class UpdateFuelLogRequest
     {
-        public FuelLog UpdatedFuelLog;
+        public FuelLog UpdatedFuelLog { get; set; }
     }
 }

@@ -27,6 +27,7 @@ namespace BusinessLogic.Mappers
                 Model = dto.Model,
                 LicensePlate = dto.LicensePlate,
                 Color = dto.Color,
+                WheelCount = dto.WheelCount,
                 FuelType = dto.FuelType.ToString()
             };
         }

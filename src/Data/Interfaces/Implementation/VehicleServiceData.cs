@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Data.Models;
 
 
@@ -31,11 +32,11 @@ namespace Data.Interfaces.Implementation
         private void Save()
         {
             File.WriteAllText(filePath, JsonSerializer.Serialize(_vehicles));
-
         }
 
         public void AddVehicle(VehicleData vehicle)
         {
+            vehicle.Id = _vehicles.Count;
             _vehicles.Add(vehicle);
             Save();
         }
@@ -50,7 +51,6 @@ namespace Data.Interfaces.Implementation
         public IEnumerable<VehicleData> GetAllVehicles()
         {
             return _vehicles;
-
         }
 
         public VehicleData GetVehicleById(int id)

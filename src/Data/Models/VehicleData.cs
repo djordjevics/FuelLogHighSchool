@@ -4,12 +4,12 @@ namespace Data.Models
 {
     public class VehicleData
     {
-        public int Id;
-        public string Model;
-        public string LicensePlate;
-        public string Color;
-        public string FuelType;
-        public int WheelCount;
+        public int Id { get; set; }
+        public string Model { get; set; }
+        public string LicensePlate { get; set; }
+        public string Color { get; set; }
+        public string FuelType { get; set; }
+        public int WheelCount { get; set; }
     }
 
 }
