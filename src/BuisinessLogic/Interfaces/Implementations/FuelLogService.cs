@@ -34,14 +34,22 @@ namespace BusinessLogic.Interfaces.Implementations
             List<FuelLog> fuelLogs = new();
             foreach (var el in _fuelLogServiceData.GetAllFuelLogsByVehicleId(getFuelLogsByVehicleId.VehicleId))
             {
-                fuelLogs.Add(el.ToFuelLogDTO().ToFuelLog());
+                var dto = el.ToFuelLogDTO();
+                dto.AmountFilledUnit = getFuelLogsByVehicleId.AmountFilledUnit;
+                dto.CostCurrency = getFuelLogsByVehicleId.CostCurrency;
+                dto.OdometerUnit = getFuelLogsByVehicleId.OdometerUnit;
+                fuelLogs.Add(dto.ToFuelLog());
             }
             return fuelLogs;
         }
 
         public FuelLog GetFuelLogById(GetFuelLogById getFuelLogById)
         {
-            return _fuelLogServiceData.GetFuelLogById(getFuelLogById.Id).ToFuelLogDTO().ToFuelLog();
+            var dto = _fuelLogServiceData.GetFuelLogById(getFuelLogById.Id).ToFuelLogDTO();
+            dto.AmountFilledUnit = getFuelLogById.AmountFilledUnit;
+            dto.OdometerUnit = getFuelLogById.OdometerUnit;
+            dto.CostCurrency = getFuelLogById.CostCurrency;
+            return dto.ToFuelLog();
         }
 
         public void UpdateFuelLog(UpdateFuelLogRequest updateFuelLogRequest)
