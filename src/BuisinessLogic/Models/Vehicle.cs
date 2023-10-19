@@ -4,11 +4,11 @@ namespace BusinessLogic.Models
 {
     public class Vehicle
     {
-        public int Id;
-        public string LicensePlate;
-        public string Model;
-        public string Color;
-        public FuelType FuelType;
-        public int WheelCount;
+        public int Id { get; set; }
+        public string LicensePlate { get; set; }
+        public string Model { get; set; }
+        public string Color { get; set; }
+        public FuelType FuelType { get; set; }
+        public int WheelCount { get; set; }
     }
 }

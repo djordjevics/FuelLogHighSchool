@@ -21,7 +21,8 @@ namespace BusinessLogic.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok(_vehicleService.GetAllVehicles());
+            var vehicles = _vehicleService.GetAllVehicles();
+            return Ok(vehicles);
         }
 
         [HttpGet("{id}")]

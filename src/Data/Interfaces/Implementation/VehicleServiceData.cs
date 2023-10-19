@@ -51,7 +51,6 @@ namespace Data.Interfaces.Implementation
         public IEnumerable<VehicleData> GetAllVehicles()
         {
             return _vehicles;
-
         }
 
         public VehicleData GetVehicleById(int id)
