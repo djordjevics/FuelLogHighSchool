@@ -22,8 +22,7 @@ namespace BusinessLogic.Controllers
         [HttpGet]
         public IActionResult GetAll(string amountUnit, string odometerUnit, string costCurrency)
         {
-            _fuelLogService.GetAllFuelLogs(amountUnit, odometerUnit, costCurrency);
-            return Ok();
+            return Ok(_fuelLogService.GetAllFuelLogs(amountUnit, odometerUnit, costCurrency));
         }
         
         [HttpGet("vehicle/{vehicleId}")]
