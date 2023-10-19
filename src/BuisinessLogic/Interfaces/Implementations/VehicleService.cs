@@ -1,5 +1,6 @@
 ﻿using BusinessLogic.Mappers;
 using BusinessLogic.Models;
+using BusinessLogic.Models.Enums;
 using Data.Interfaces;
 using Data.Interfaces.Implementation;
 
@@ -8,6 +9,7 @@ namespace BusinessLogic.Interfaces.Implementations;
 public class VehicleService : IVehicleService
 {
     private readonly IVehicleServiceData _vehicleServiceData = new VehicleServiceData();
+    private IFuelLogService _fuelLogService = new FuelLogService();
 
     public void AddVehicle(CreateVehicle createVehicle)
     {
@@ -38,5 +40,16 @@ public class VehicleService : IVehicleService
     public void UpdateVehicle(UpdateVehicleRequest updateVehicleRequest)
     {
         _vehicleServiceData.UpdateVehicle(updateVehicleRequest.ToVehicleDTO().ToVehicleData());
+    }
+
+    public double AverageFuelConsumption(int vehicleId)
+    {
+        var logs = _fuelLogService.GetAllFuelLogsByVehicleId(new GetFuelLogsByVehicleId { VehicleId = vehicleId});
+
+        double odoSum = logs.Sum(x => x.Odometer);
+        double fuelConsumptedSum = logs.Sum(x => x.AmountFilled);
+
+        return odoSum / fuelConsumptedSum; 
+
     }
 }
