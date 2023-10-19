@@ -1,5 +1,6 @@
 ﻿using BusinessLogic.Mappers;
 using BusinessLogic.Models;
+using BusinessLogic.Models.Enums;
 using Data.Interfaces;
 using Data.Interfaces.Implementation;
 
@@ -19,12 +20,16 @@ namespace BusinessLogic.Interfaces.Implementations
             _fuelLogServiceData.DeleteFuelLog(deleteFuelLogRequest.Id);
         }
 
-        public IEnumerable<FuelLog> GetAllFuelLogs()
+        public IEnumerable<FuelLog> GetAllFuelLogs(string amountUnit, string odometerUnit, string costCurrency)
         {
             List<FuelLog> fuelLogs = new();
             foreach (var el in _fuelLogServiceData.GetAllFuelLogs())
             {
-                fuelLogs.Add(el.ToFuelLogDTO().ToFuelLog());
+                var dto = el.ToFuelLogDTO();
+                dto.AmountFilledUnit = Enum.Parse<AmountFilledUnit>(amountUnit);
+                dto.CostCurrency = Enum.Parse<CostCurrency>(costCurrency);
+                dto.OdometerUnit = Enum.Parse<OdometerUnit>(odometerUnit);
+                fuelLogs.Add(dto.ToFuelLog());
             }
             return fuelLogs;
         }

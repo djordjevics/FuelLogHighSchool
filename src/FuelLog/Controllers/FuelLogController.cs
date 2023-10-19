@@ -20,9 +20,9 @@ namespace BusinessLogic.Controllers
         }
         
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll(string amountUnit, string odometerUnit, string costCurrency)
         {
-            _fuelLogService.GetAllFuelLogs();
+            _fuelLogService.GetAllFuelLogs(amountUnit, odometerUnit, costCurrency);
             return Ok();
         }
         
