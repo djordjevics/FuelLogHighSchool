@@ -48,7 +48,7 @@ public class VehicleService : IVehicleService
 
         double fuelConsumptedSum = logs.Sum(x => x.AmountFilled);
 
-        return logs.Last().Odometer / fuelConsumptedSum; 
+        return (logs.Last().Odometer - logs.First().Odometer) / fuelConsumptedSum; 
 
     }
 
