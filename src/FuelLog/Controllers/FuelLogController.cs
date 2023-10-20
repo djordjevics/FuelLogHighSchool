@@ -1,6 +1,7 @@
 using BusinessLogic.Interfaces;
 using BusinessLogic.Interfaces.Implementations;
 using BusinessLogic.Models;
+using BusinessLogic.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BusinessLogic.Controllers
@@ -19,27 +20,32 @@ namespace BusinessLogic.Controllers
         }
         
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll(string amountUnit, string odometerUnit, string costCurrency)
         {
-            _fuelLogService.GetAllFuelLogs();
-            return Ok();
+            return Ok(_fuelLogService.GetAllFuelLogs(amountUnit, odometerUnit, costCurrency));
         }
         
         [HttpGet("vehicle/{vehicleId}")]
-        public IActionResult GetByVehicle(int vehicleId)
+        public IActionResult GetByVehicle(int vehicleId, string amountUnit, string odometerUnit, string costCurrency)
         {
             return Ok(_fuelLogService.GetAllFuelLogsByVehicleId(new()
-            { 
-                VehicleId = vehicleId 
+            {
+                VehicleId = vehicleId,
+                AmountFilledUnit = Enum.Parse<AmountFilledUnit>(amountUnit),
+                OdometerUnit = Enum.Parse<OdometerUnit>(odometerUnit),
+                CostCurrency = Enum.Parse<CostCurrency>(costCurrency)
             }));
         }
         
         [HttpGet("{id}")]
-        public IActionResult GetById(int fuelLogId)
+        public IActionResult GetById(int id, string amountUnit, string odometerUnit, string costCurrency)
         {
             return Ok(_fuelLogService.GetFuelLogById(new()
             {
-                Id = fuelLogId
+                Id = id,
+                AmountFilledUnit = Enum.Parse<AmountFilledUnit>(amountUnit),
+                OdometerUnit = Enum.Parse<OdometerUnit>(odometerUnit),
+                CostCurrency = Enum.Parse<CostCurrency>(costCurrency)
             }));
         }
         
