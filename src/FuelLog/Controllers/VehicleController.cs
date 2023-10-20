@@ -34,6 +34,18 @@ namespace BusinessLogic.Controllers
             }));
         }
 
+        [HttpGet("fuelConsumption/{id}")]
+        public IActionResult GetAvgFuelConsumption(int vehicleId)
+        {
+            return Ok(_vehicleService.AvgFuelConsumption(vehicleId));
+        }
+
+        [HttpGet("fuelConsumption")]
+        public IActionResult GetAvgFuelConsumptionBetweenFuelLogs(int vehicleId, int fuelLog1Id, int fuelLog2Id)
+        {
+            return Ok(_vehicleService.AvgFuelConsumptionBetweenFuelLogs(vehicleId, fuelLog1Id, fuelLog2Id));
+        }
+
         [HttpPut]
         public IActionResult UpdateVehicle(UpdateVehicleRequest updateVehicleRequest)
         {
